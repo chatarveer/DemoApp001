@@ -45,9 +45,7 @@ class ImagePickerManager: NSObject, IImagePickerManager {
     
     private override init() { }
     
-    deinit {
-        print("deinit singleton")
-    }
+    deinit { }
     
     func openImagePicker(sourceType: ImagePickerType, delegate: ImagePickerDelegate) {
         
