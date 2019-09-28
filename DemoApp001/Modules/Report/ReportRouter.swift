@@ -1,5 +1,5 @@
 //
-//  HomeRouter.swift
+//  ReportRouter.swift
 //  DemoApp001
 //
 //  Created Veer Suthar on 28/09/2019.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-class HomeRouter: HomeWireframeProtocol {
+class ReportRouter: ReportWireframeProtocol {
 
     weak var viewController: UIViewController?
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = HomeViewController(nibName: nil, bundle: nil)
-        let interactor = HomeInteractor()
-        let router = HomeRouter()
-        let presenter = HomePresenter(interface: view, interactor: interactor, router: router)
+        let view = ReportViewController(nibName: nil, bundle: nil)
+        let interactor = ReportInteractor()
+        let router = ReportRouter()
+        let presenter = ReportPresenter(interface: view, interactor: interactor, router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

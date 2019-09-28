@@ -26,7 +26,7 @@ struct Bootstrapper {
     }
     
     mutating func bootstrap() {
-        let controller = HomeRouter.createModule()
+        let controller = ReportRouter.createModule()
         let navigationController = UINavigationController(rootViewController: controller)
         if #available(iOS 13.0, *) {
             navigationController.modalPresentationStyle = .fullScreen

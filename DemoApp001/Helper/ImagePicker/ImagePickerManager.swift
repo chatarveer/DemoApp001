@@ -81,13 +81,22 @@ class ImagePickerManager: NSObject, IImagePickerManager {
     }
     
     func didSelectImage(image: UIImage) {
-        ///
+        self.delegate?.didSelectImage(image: image)
     }
     
 }
 
 extension ImagePickerManager: UIImagePickerControllerDelegate {
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        picker.dismiss(animated: true) {
+            self.didSelectImage(image: image)
+        }
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+    }
 }
 
 extension ImagePickerManager: UINavigationControllerDelegate {
