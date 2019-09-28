@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  ReportViewController.swift
 //  DemoApp001
 //
 //  Created Veer Suthar on 28/09/2019.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, HomeViewProtocol {
+class ReportViewController: UIViewController, ReportViewProtocol {
     
-    var presenter: HomePresenterProtocol?
+    var presenter: ReportPresenterProtocol?
     
     @IBOutlet weak var collectionViewDamageArea: UICollectionView!
     @IBOutlet weak var textViewComments: PlaceholderTextView!
@@ -90,14 +90,14 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     }
 }
 
-extension HomeViewController: SetupViewController {
+extension ReportViewController: SetupViewController {
     func setup() {
         
         self.collectionViewDamageArea.delegate = self
         self.collectionViewDamageArea.dataSource = self
         
-        let nib = UINib(nibName: "HomeCollectionViewCell", bundle: nil)
-        collectionViewDamageArea?.register(nib, forCellWithReuseIdentifier: "HomeCollectionViewCell")
+        let nib = UINib(nibName: "ReportCollectionViewCell", bundle: nil)
+        collectionViewDamageArea?.register(nib, forCellWithReuseIdentifier: "ReportCollectionViewCell")
         
         self.textViewComments.delegate = self
     }
@@ -110,7 +110,7 @@ extension HomeViewController: SetupViewController {
         self.presenter?.getDamagedImages()
     }
 }
-extension HomeViewController:UITextViewDelegate{
+extension ReportViewController:UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
         guard let text = textView.text else { return }
         self.presenter?.set(comment: text)

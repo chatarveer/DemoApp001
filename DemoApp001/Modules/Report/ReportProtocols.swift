@@ -1,5 +1,5 @@
 //
-//  HomeProtocols.swift
+//  ReportProtocols.swift
 //  DemoApp001
 //
 //  Created Veer Suthar on 28/09/2019.
@@ -9,13 +9,13 @@
 import Foundation
 
 //MARK: Wireframe -
-protocol HomeWireframeProtocol: class {
+protocol ReportWireframeProtocol: class {
     
 }
 //MARK: Presenter -
-protocol HomePresenterProtocol: class {
+protocol ReportPresenterProtocol: class {
     
-    var interactor: HomeInteractorInputProtocol? { get set }
+    var interactor: ReportInteractorInputProtocol? { get set }
     var arrayDamagedImages: [DamagedImage]? { get set }
     var indexPath: IndexPath? { get set }
     var comment: String? { get set }
@@ -32,16 +32,16 @@ protocol HomePresenterProtocol: class {
 }
 
 //MARK: Interactor -
-protocol HomeInteractorOutputProtocol: class {
+protocol ReportInteractorOutputProtocol: class {
     
     /* Interactor -> Presenter */
     
     func damagedImages(arrayDamagedImages: [DamagedImage])
 }
 
-protocol HomeInteractorInputProtocol: class {
+protocol ReportInteractorInputProtocol: class {
     
-    var presenter: HomeInteractorOutputProtocol?  { get set }
+    var presenter: ReportInteractorOutputProtocol?  { get set }
     
     /* Presenter -> Interactor */
     func getDamagedImages()
@@ -49,9 +49,9 @@ protocol HomeInteractorInputProtocol: class {
 }
 
 //MARK: View -
-protocol HomeViewProtocol: class {
+protocol ReportViewProtocol: class {
     
-    var presenter: HomePresenterProtocol?  { get set }
+    var presenter: ReportPresenterProtocol?  { get set }
     
     /* Presenter -> ViewController */
     

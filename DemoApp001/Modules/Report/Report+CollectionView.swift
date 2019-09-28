@@ -1,5 +1,5 @@
 //
-//  Home+CollectionView.swift
+//  Report+CollectionView.swift
 //  DemoApp001
 //
 //  Created by Veer Suthar on 28/09/2019.
@@ -9,20 +9,20 @@
 import Foundation
 import UIKit
 
-extension HomeViewController: UICollectionViewDelegate {
+extension ReportViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.presenter?.selectedIndex(indexPath: indexPath)
     }
 }
 
-extension HomeViewController: UICollectionViewDataSource {
+extension ReportViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {        
         guard let count = self.presenter?.arrayDamagedImages?.count else { return 0 }
         return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReportCollectionViewCell", for: indexPath) as? ReportCollectionViewCell,
             let arrayDamagedImages = self.presenter?.arrayDamagedImages
             else { return UICollectionViewCell() }
         
@@ -33,7 +33,7 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
+extension ReportViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellSize = CGSize(width: 180.0, height: 180.0)
         return cellSize

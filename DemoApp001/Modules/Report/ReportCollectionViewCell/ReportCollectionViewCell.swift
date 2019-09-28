@@ -1,5 +1,5 @@
 //
-//  HomeCollectionViewCell.swift
+//  ReportCollectionViewCell.swift
 //  DemoApp001
 //
 //  Created by Veer Suthar on 28/09/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeCollectionViewCell: UICollectionViewCell {
+class ReportCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageviewDamagedSide: UIImageView!
     @IBOutlet weak var labelDamagedTitle: UILabel!
@@ -20,7 +20,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
 }
 
-extension HomeCollectionViewCell: SetupCell {
+extension ReportCollectionViewCell: SetupCell {
     func configureCell<T>(object: T) {
         guard let object = object as? DamagedImage else { return }
         self.imageviewDamagedSide.image = object.image

@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReportViewController">
             <connections>
                 <outlet property="collectionViewDamageArea" destination="aPt-CM-i7Y" id="9Ab-cn-rlh"/>
                 <outlet property="textViewComments" destination="TjE-NR-OYr" id="D5n-8c-W10"/>

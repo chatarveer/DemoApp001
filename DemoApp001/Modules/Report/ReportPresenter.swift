@@ -1,5 +1,5 @@
 //
-//  HomePresenter.swift
+//  ReportPresenter.swift
 //  DemoApp001
 //
 //  Created Veer Suthar on 28/09/2019.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
+class ReportPresenter: ReportPresenterProtocol, ReportInteractorOutputProtocol {
     
-    weak private var view: HomeViewProtocol?
-    var interactor: HomeInteractorInputProtocol?
-    private let router: HomeWireframeProtocol
+    weak private var view: ReportViewProtocol?
+    var interactor: ReportInteractorInputProtocol?
+    private let router: ReportWireframeProtocol
     
     var arrayDamagedImages: [DamagedImage]?
     var indexPath: IndexPath?
     var comment: String?
     
-    init(interface: HomeViewProtocol, interactor: HomeInteractorInputProtocol?, router: HomeWireframeProtocol) {
+    init(interface: ReportViewProtocol, interactor: ReportInteractorInputProtocol?, router: ReportWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
@@ -95,7 +95,7 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     }
 }
 	
-extension HomePresenter: ImagePickerDelegate {
+extension ReportPresenter: ImagePickerDelegate {
     func didSelectImage(image: UIImage) {
         guard let indexPath = self.indexPath else  { return }
         self.arrayDamagedImages?[indexPath.row].image = image

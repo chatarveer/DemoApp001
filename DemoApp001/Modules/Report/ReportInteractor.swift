@@ -1,5 +1,5 @@
 //
-//  HomeInteractor.swift
+//  ReportInteractor.swift
 //  DemoApp001
 //
 //  Created Veer Suthar on 28/09/2019.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class HomeInteractor: HomeInteractorInputProtocol {
+class ReportInteractor: ReportInteractorInputProtocol {
     
-    weak var presenter: HomeInteractorOutputProtocol?
+    weak var presenter: ReportInteractorOutputProtocol?
     
     func getDamagedImages() {
         let damagedImageFront = DamagedImage(image: nil, type: .front)
