@@ -18,15 +18,22 @@ class ReportCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
+    func errorUI() {
+        DispatchQueue.main.async { [weak self] in
+            self?.imageviewDamagedSide.backgroundColor = .red
+        }
+    }
 }
 
 extension ReportCollectionViewCell: SetupCell {
     func configureCell<T>(object: T) {
         guard let object = object as? DamagedImage else { return }
-        self.imageviewDamagedSide.image = object.image
-        self.labelDamagedTitle.text = "\(object.type.getTitle()) Side"
-        if object.image != nil {
-            self.backgroundColor = .black
+        DispatchQueue.main.async { [weak self] in
+            self?.imageviewDamagedSide.image = object.image
+            self?.labelDamagedTitle.text = "\(object.type.getTitle()) Side"
+            if object.image != nil {
+                self?.imageviewDamagedSide.backgroundColor = .black
+            }
         }
     }
 }

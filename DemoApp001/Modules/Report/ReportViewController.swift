@@ -22,8 +22,13 @@ class ReportViewController: UIViewController, ReportViewProtocol {
         setup()
         networkRequests()
     }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("Touchbegin")
+    }
     
     @IBAction func didPressSubmit(_ sender: UIButton) {
+        textViewComments.endEditing(true)
         self.presenter?.submit()
     }
     
@@ -84,9 +89,9 @@ class ReportViewController: UIViewController, ReportViewProtocol {
     }
     
     func imageInvalid(indexPath: IndexPath) {
-        //Shake
-        let cell = collectionViewDamageArea.cellForItem(at: indexPath)
-        cell?.backgroundColor = .red
+        if let cell = collectionViewDamageArea.cellForItem(at: indexPath) as? ReportCollectionViewCell {
+            cell.errorUI()
+        }
     }
 }
 
