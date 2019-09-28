@@ -1,5 +1,5 @@
 //
-//  SetupViewController.swift
+//  SetupViews.swift
 //  DemoApp001
 //
 //  Created by Veer Suthar on 28/09/2019.
@@ -11,4 +11,9 @@ import Foundation
 protocol SetupViewController {
     func setup()
     func setupNavigation()
+    func networkRequests()
+}
+
+protocol SetupCell {
+    func configureCell<T>(object: T)
 }

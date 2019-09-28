@@ -16,15 +16,27 @@ protocol HomeWireframeProtocol: class {
 protocol HomePresenterProtocol: class {
     
     var interactor: HomeInteractorInputProtocol? { get set }
+    var arrayDamagedImages: [DamagedImage]? { get set }
+    var indexPath: IndexPath? { get set }
+    var comment: String? { get set }
+    
+    func set(comment: String)
     
     func selectedIndex(indexPath: IndexPath)
     func openImagePicker(sourceType: ImagePickerType)
+    func getDamagedImages()
+    
+    func submit()
+    
+    func validate(image: DamagedImage) -> (image: DamagedImage, isValid: Bool)
 }
 
 //MARK: Interactor -
 protocol HomeInteractorOutputProtocol: class {
     
     /* Interactor -> Presenter */
+    
+    func damagedImages(arrayDamagedImages: [DamagedImage])
 }
 
 protocol HomeInteractorInputProtocol: class {
@@ -32,6 +44,8 @@ protocol HomeInteractorInputProtocol: class {
     var presenter: HomeInteractorOutputProtocol?  { get set }
     
     /* Presenter -> Interactor */
+    func getDamagedImages()
+    func submit(damagedComplain: DamagedComplainRequest)
 }
 
 //MARK: View -
@@ -46,4 +60,10 @@ protocol HomeViewProtocol: class {
     
     func selectPickerType()
     func reloadCollection()
+    func reloadCollection(indexPath: IndexPath)
+
+    func updateCommentViewToDefaultState()
+
+    func commentInvalid()
+    func imageInvalid(indexPath: IndexPath)
 }

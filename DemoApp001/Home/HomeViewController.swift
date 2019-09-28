@@ -13,12 +13,18 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
     
     @IBOutlet weak var collectionViewDamageArea: UICollectionView!
+    @IBOutlet weak var textViewComments: PlaceholderTextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigation()
         setup()
+        networkRequests()
+    }
+    
+    @IBAction func didPressSubmit(_ sender: UIButton) {
+        self.presenter?.submit()
     }
     
     func showLoader() {
@@ -54,8 +60,34 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     }
     
     func reloadCollection() {
-        ///
-    }    
+        DispatchQueue.main.async {
+            self.collectionViewDamageArea.reloadData()
+        }
+    }
+    
+    func reloadCollection(indexPath: IndexPath) {
+        DispatchQueue.main.async {
+            self.collectionViewDamageArea.reloadItems(at: [indexPath])
+        }
+    }
+    
+    func updateCommentViewToDefaultState() {
+        DispatchQueue.main.async {
+            self.textViewComments.backgroundColor = .black
+        }
+    }
+    
+    func commentInvalid() {
+        DispatchQueue.main.async {
+            self.textViewComments.backgroundColor = .red
+        }
+    }
+    
+    func imageInvalid(indexPath: IndexPath) {
+        //Shake
+        let cell = collectionViewDamageArea.cellForItem(at: indexPath)
+        cell?.backgroundColor = .red
+    }
 }
 
 extension HomeViewController: SetupViewController {
@@ -66,11 +98,21 @@ extension HomeViewController: SetupViewController {
         
         let nib = UINib(nibName: "HomeCollectionViewCell", bundle: nil)
         collectionViewDamageArea?.register(nib, forCellWithReuseIdentifier: "HomeCollectionViewCell")
+        
+        self.textViewComments.delegate = self
     }
     
     func setupNavigation() {
         self.title = "eKar"
     }
     
-    
+    func networkRequests() {
+        self.presenter?.getDamagedImages()
+    }
+}
+extension HomeViewController:UITextViewDelegate{
+    func textViewDidChange(_ textView: UITextView) {
+        guard let text = textView.text else { return }
+        self.presenter?.set(comment: text)
+    }
 }
