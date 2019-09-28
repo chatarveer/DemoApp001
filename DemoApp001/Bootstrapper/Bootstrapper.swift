@@ -14,14 +14,17 @@ struct Bootstrapper {
     var window: UIWindow
     static var instance: Bootstrapper?
     
-    static func initialize(windowScene: UIWindowScene) {
-        instance = Bootstrapper(window: makeNewWindow(windowScene: windowScene))
+    static func initialize(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) {
+        instance = Bootstrapper(window: makeNewWindow())
         instance!.bootstrap()
     }
     
-    private static func makeNewWindow(windowScene: UIWindowScene) -> UIWindow {
-        let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window.windowScene = windowScene
+    private static func makeNewWindow() -> UIWindow {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.backgroundColor = UIColor.white
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.window = window
+        }
         return window
     }
     

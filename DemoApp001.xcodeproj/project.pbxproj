@@ -13,7 +13,6 @@
 		DAE54E26233FC40D0022DE78 /* MockReportRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE54E25233FC40D0022DE78 /* MockReportRouter.swift */; };
 		DAE54E28233FC45E0022DE78 /* ReportTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE54E27233FC45E0022DE78 /* ReportTest.swift */; };
 		DAF0A16D233F872E00B1C3A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF0A16C233F872E00B1C3A8 /* AppDelegate.swift */; };
-		DAF0A16F233F872E00B1C3A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF0A16E233F872E00B1C3A8 /* SceneDelegate.swift */; };
 		DAF0A176233F872F00B1C3A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF0A175233F872F00B1C3A8 /* Assets.xcassets */; };
 		DAF0A179233F872F00B1C3A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF0A177233F872F00B1C3A8 /* LaunchScreen.storyboard */; };
 		DAF0A184233F872F00B1C3A8 /* DemoApp001Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF0A183233F872F00B1C3A8 /* DemoApp001Tests.swift */; };
@@ -61,7 +60,6 @@
 		DAE54E27233FC45E0022DE78 /* ReportTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTest.swift; sourceTree = "<group>"; };
 		DAF0A169233F872E00B1C3A8 /* DemoApp001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp001.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF0A16C233F872E00B1C3A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = DemoApp001/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		DAF0A16E233F872E00B1C3A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../SceneDelegate.swift; sourceTree = "<group>"; };
 		DAF0A175233F872F00B1C3A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAF0A178233F872F00B1C3A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAF0A17A233F872F00B1C3A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				DAF0A16C233F872E00B1C3A8 /* AppDelegate.swift */,
-				DAF0A16E233F872E00B1C3A8 /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -430,7 +427,6 @@
 				DAF0A1BB233F8C5600B1C3A8 /* SetupViews.swift in Sources */,
 				DAF0A1C0233F9D0500B1C3A8 /* DamagedImage.swift in Sources */,
 				DAF0A1BD233F8CC900B1C3A8 /* Report+CollectionView.swift in Sources */,
-				DAF0A16F233F872E00B1C3A8 /* SceneDelegate.swift in Sources */,
 				DAF0A1AB233F883E00B1C3A8 /* ReportInteractor.swift in Sources */,
 				DAF0A1C3233FA3C600B1C3A8 /* PlaceholderTextView.swift in Sources */,
 				DAF0A1A7233F883E00B1C3A8 /* ReportPresenter.swift in Sources */,
@@ -609,6 +605,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U2CRDTP647;
 				INFOPLIST_FILE = DemoApp001/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -627,6 +624,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U2CRDTP647;
 				INFOPLIST_FILE = DemoApp001/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
