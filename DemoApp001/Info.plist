@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>$(EXECUTABLE_NAME) would like to access your gallery to get pictures of damages</string>
+	<string>$(EXECUTABLE_NAME) would like to access your gallery to get pictures of damages.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>$(EXECUTABLE_NAME) would like to access your camera to get pictures of damages</string>
+	<string>$(EXECUTABLE_NAME) would like to access your camera to get pictures of damages.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
