@@ -14,12 +14,16 @@ enum DamagedImageType {
     case back
     case left
     case right
+    
+    func getTitle() -> String {
+        return "\(self)".capitalized
+    }
 }
 
 //Ideally API should be integrated and instead of UIImage, there should be URL in model.
 struct DamagedImage {
     var image: UIImage?
-    let type: DamagedImageType?
+    let type: DamagedImageType
 }
 
 struct DamagedComplainRequest {
