@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         
         setupNavigation()
         setup()
+        networkRequests()
     }
     
     func showLoader() {
@@ -54,7 +55,9 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     }
     
     func reloadCollection() {
-        ///
+        DispatchQueue.main.async {
+            self.collectionViewDamageArea.reloadData()
+        }
     }    
 }
 
@@ -72,5 +75,7 @@ extension HomeViewController: SetupViewController {
         self.title = "eKar"
     }
     
-    
+    func networkRequests() {
+        self.presenter?.getDamagedImages()
+    }
 }

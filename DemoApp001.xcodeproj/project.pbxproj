@@ -24,8 +24,9 @@
 		DAF0A1B1233F8ABB00B1C3A8 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAF0A1AF233F8ABB00B1C3A8 /* HomeCollectionViewCell.xib */; };
 		DAF0A1B6233F8B1E00B1C3A8 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF0A1B5233F8B1E00B1C3A8 /* ImagePickerManager.swift */; };
 		DAF0A1B8233F8B6700B1C3A8 /* UIViewController+top.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF0A1B7233F8B6700B1C3A8 /* UIViewController+top.swift */; };
-		DAF0A1BB233F8C5600B1C3A8 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF0A1BA233F8C5600B1C3A8 /* SetupViewController.swift */; };
+		DAF0A1BB233F8C5600B1C3A8 /* SetupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF0A1BA233F8C5600B1C3A8 /* SetupViews.swift */; };
 		DAF0A1BD233F8CC900B1C3A8 /* Home+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF0A1BC233F8CC900B1C3A8 /* Home+CollectionView.swift */; };
+		DAF0A1C0233F9D0500B1C3A8 /* DamagedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF0A1BF233F9D0500B1C3A8 /* DamagedImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +70,9 @@
 		DAF0A1AF233F8ABB00B1C3A8 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		DAF0A1B5233F8B1E00B1C3A8 /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
 		DAF0A1B7233F8B6700B1C3A8 /* UIViewController+top.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+top.swift"; sourceTree = "<group>"; };
-		DAF0A1BA233F8C5600B1C3A8 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		DAF0A1BA233F8C5600B1C3A8 /* SetupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViews.swift; sourceTree = "<group>"; };
 		DAF0A1BC233F8CC900B1C3A8 /* Home+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+CollectionView.swift"; sourceTree = "<group>"; };
+		DAF0A1BF233F9D0500B1C3A8 /* DamagedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagedImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		DAF0A16B233F872E00B1C3A8 /* DemoApp001 */ = {
 			isa = PBXGroup;
 			children = (
+				DAF0A1BE233F9CCE00B1C3A8 /* Models */,
 				DAF0A1B2233F8AC500B1C3A8 /* Helper */,
 				DAF0A1A0233F883300B1C3A8 /* Home */,
 				DAF0A19D233F879D00B1C3A8 /* Bootstrapper */,
@@ -220,9 +223,17 @@
 		DAF0A1B9233F8C4800B1C3A8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				DAF0A1BA233F8C5600B1C3A8 /* SetupViewController.swift */,
+				DAF0A1BA233F8C5600B1C3A8 /* SetupViews.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DAF0A1BE233F9CCE00B1C3A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAF0A1BF233F9D0500B1C3A8 /* DamagedImage.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,7 +372,8 @@
 				DAF0A19F233F87BC00B1C3A8 /* Bootstrapper.swift in Sources */,
 				DAF0A1B6233F8B1E00B1C3A8 /* ImagePickerManager.swift in Sources */,
 				DAF0A16D233F872E00B1C3A8 /* AppDelegate.swift in Sources */,
-				DAF0A1BB233F8C5600B1C3A8 /* SetupViewController.swift in Sources */,
+				DAF0A1BB233F8C5600B1C3A8 /* SetupViews.swift in Sources */,
+				DAF0A1C0233F9D0500B1C3A8 /* DamagedImage.swift in Sources */,
 				DAF0A1BD233F8CC900B1C3A8 /* Home+CollectionView.swift in Sources */,
 				DAF0A16F233F872E00B1C3A8 /* SceneDelegate.swift in Sources */,
 				DAF0A1AB233F883E00B1C3A8 /* HomeInteractor.swift in Sources */,

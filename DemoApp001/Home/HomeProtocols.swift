@@ -16,15 +16,20 @@ protocol HomeWireframeProtocol: class {
 protocol HomePresenterProtocol: class {
     
     var interactor: HomeInteractorInputProtocol? { get set }
-    
+    var arrayDamagedImages: [DamagedImage]? { get set }
+    var indexPath: IndexPath? { get set }
+
     func selectedIndex(indexPath: IndexPath)
     func openImagePicker(sourceType: ImagePickerType)
+    func getDamagedImages()
 }
 
 //MARK: Interactor -
 protocol HomeInteractorOutputProtocol: class {
     
     /* Interactor -> Presenter */
+    
+    func damagedImages(arrayDamagedImages: [DamagedImage])
 }
 
 protocol HomeInteractorInputProtocol: class {
@@ -32,6 +37,7 @@ protocol HomeInteractorInputProtocol: class {
     var presenter: HomeInteractorOutputProtocol?  { get set }
     
     /* Presenter -> Interactor */
+    func getDamagedImages()
 }
 
 //MARK: View -

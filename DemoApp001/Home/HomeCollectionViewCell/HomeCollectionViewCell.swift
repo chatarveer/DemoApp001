@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var imageviewDamagedSide: UIImageView!
     @IBOutlet weak var labelDamagedTitle: UILabel!
     
@@ -17,5 +17,12 @@ class HomeCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+}
 
+extension HomeCollectionViewCell: SetupCell {
+    func configureCell<T>(object: T) {
+        guard let object = object as? DamagedImage else { return }
+        self.imageviewDamagedSide.image = object.image
+    }
 }
