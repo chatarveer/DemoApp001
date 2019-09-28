@@ -22,10 +22,6 @@ class ReportViewController: UIViewController, ReportViewProtocol {
         setup()
         networkRequests()
     }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("Touchbegin")
-    }
     
     @IBAction func didPressSubmit(_ sender: UIButton) {
         textViewComments.endEditing(true)
