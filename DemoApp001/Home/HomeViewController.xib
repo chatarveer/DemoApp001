@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="collectionViewDamageArea" destination="aPt-CM-i7Y" id="9Ab-cn-rlh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,7 +16,25 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="aPt-CM-i7Y">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kyP-DB-pfv">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="aPt-CM-i7Y" secondAttribute="bottom" id="K9w-jR-9Qk"/>
+                <constraint firstItem="aPt-CM-i7Y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="T67-2K-eib"/>
+                <constraint firstAttribute="trailing" secondItem="aPt-CM-i7Y" secondAttribute="trailing" id="ajz-Zd-0gN"/>
+                <constraint firstItem="aPt-CM-i7Y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yTw-bi-qaj"/>
+            </constraints>
             <point key="canvasLocation" x="138" y="153"/>
         </view>
     </objects>

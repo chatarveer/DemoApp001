@@ -34,4 +34,8 @@ struct Bootstrapper {
         self.window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
+    
+    static func getWindow() -> UIWindow? {
+        return instance!.window
+    }
 }
