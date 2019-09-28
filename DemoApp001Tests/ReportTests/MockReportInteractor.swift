@@ -1,16 +1,16 @@
 //
-//  ReportInteractor.swift
-//  DemoApp001
+//  MockReportInteractor.swift
+//  DemoApp001Tests
 //
-//  Created Veer Suthar on 28/09/2019.
+//  Created by Veer Suthar on 28/09/2019.
 //  Copyright © 2019 Veer Suthar. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class ReportInteractor: ReportInteractorInputProtocol {
-    
-    weak var presenter: ReportInteractorOutputProtocol?
+@testable import DemoApp001
+class MockReportInteractor : ReportInteractorInputProtocol {
+    var presenter: ReportInteractorOutputProtocol?
     
     func getDamagedImages() {
         let damagedImageFront = DamagedImage(image: nil, type: .front)
@@ -23,6 +23,6 @@ class ReportInteractor: ReportInteractorInputProtocol {
     }
     
     func submit(damagedComplain: DamagedComplainRequest) {
-        //Submit complain to server
-    }
+        ///
+    }    
 }
