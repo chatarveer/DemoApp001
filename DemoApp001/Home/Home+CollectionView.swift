@@ -35,7 +35,7 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellSize = CGSize(width: 200.0, height: 200.0)
+        let cellSize = CGSize(width: 180.0, height: 180.0)
         return cellSize
     }
     

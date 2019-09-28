@@ -21,3 +21,8 @@ struct DamagedImage {
     var image: UIImage?
     let type: DamagedImageType?
 }
+
+struct DamagedComplainRequest {
+    var comment: String
+    var damagedImages: [DamagedImage]
+}

@@ -21,4 +21,8 @@ class HomeInteractor: HomeInteractorInputProtocol {
         let arrayDamagedImages = [damagedImageFront, damagedImageBack, damagedImageLeft, damagedImageRight]
         self.presenter?.damagedImages(arrayDamagedImages: arrayDamagedImages)
     }
+    
+    func submit(damagedComplain: DamagedComplainRequest) {
+        print("Submit is successful \(damagedComplain)")
+    }
 }
