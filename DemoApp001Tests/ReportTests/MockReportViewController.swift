@@ -10,6 +10,7 @@ import Foundation
 
 @testable import DemoApp001
 class MockReportViewController : ReportViewProtocol {
+    
     var presenter: ReportPresenterProtocol?
     
     func showLoader() {
@@ -20,7 +21,7 @@ class MockReportViewController : ReportViewProtocol {
         ///
     }
     
-    func selectPickerType() {
+    func selectPickerType(shouldShowDelete: Bool, for indexPath: IndexPath) {
         ///
     }
     

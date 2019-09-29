@@ -52,7 +52,7 @@ class ReportTest: XCTestCase {
             return
         }
         for value in arrayDamagedImages {
-            assert(value.image == nil, "\(value.type.getTitle()) found non-nil")
+            assert(value.image == self.presenter?.placeholder, "\(value.type.getTitle()) found non-nil")
         }
     }
     
@@ -67,7 +67,7 @@ class ReportTest: XCTestCase {
         self.presenter?.selectedIndex(indexPath: indexPath)
         
         let bundle = Bundle(for: DemoApp001Tests.self)
-        if let imageFront = UIImage(named: "car_front", in: bundle, compatibleWith: nil) {
+        if let imageFront = UIImage(named: "placeholder", in: bundle, compatibleWith: nil) {
             self.presenter?.didSelectImage(image: imageFront)
         }
         
@@ -85,7 +85,7 @@ class ReportTest: XCTestCase {
         self.presenter?.selectedIndex(indexPath: indexPath)
         
         let bundle = Bundle(for: DemoApp001Tests.self)
-        if let imageBack = UIImage(named: "car_front", in: bundle, compatibleWith: nil) {
+        if let imageBack = UIImage(named: "placeholder", in: bundle, compatibleWith: nil) {
             self.presenter?.didSelectImage(image: imageBack)
         }
         
@@ -103,7 +103,7 @@ class ReportTest: XCTestCase {
         self.presenter?.selectedIndex(indexPath: indexPath)
         
         let bundle = Bundle(for: DemoApp001Tests.self)
-        if let imageLeft = UIImage(named: "car_front", in: bundle, compatibleWith: nil) {
+        if let imageLeft = UIImage(named: "placeholder", in: bundle, compatibleWith: nil) {
             self.presenter?.didSelectImage(image: imageLeft)
         }
         
@@ -121,7 +121,7 @@ class ReportTest: XCTestCase {
         self.presenter?.selectedIndex(indexPath: indexPath)
         
         let bundle = Bundle(for: DemoApp001Tests.self)
-        if let imageRight = UIImage(named: "car_front", in: bundle, compatibleWith: nil) {
+        if let imageRight = UIImage(named: "placeholder", in: bundle, compatibleWith: nil) {
             self.presenter?.didSelectImage(image: imageRight)
         }
         
@@ -142,13 +142,19 @@ class ReportTest: XCTestCase {
             let indexPath = IndexPath(row: value, section: 0)
             self.presenter?.selectedIndex(indexPath: indexPath)
             
-            if let image = UIImage(named: "car_front", in: bundle, compatibleWith: nil) {
+            if let image = UIImage(named: "placeholder", in: bundle, compatibleWith: nil) {
                 self.presenter?.didSelectImage(image: image)
             }
             
-            assert(presenter?.arrayDamagedImages?[indexPath.row].image != nil, "Image found nil at \(indexPath)")
+            assert(presenter?.arrayDamagedImages?[indexPath.row].image != self.presenter?.placeholder, "Image found nil at \(indexPath)")
         }
     }
+    
+    func testDeleteImage() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        self.presenter?.removeImage(indexPath: indexPath)
+    }
+    
     
     func testCommentNil() {
         self.presenter?.set(comment: "I have found crash on right side of car")
