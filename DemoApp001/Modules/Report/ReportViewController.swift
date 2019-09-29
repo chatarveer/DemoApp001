@@ -14,6 +14,7 @@ class ReportViewController: UIViewController, ReportViewProtocol {
     
     @IBOutlet weak var collectionViewDamageArea: UICollectionView!
     @IBOutlet weak var textViewComments: PlaceholderTextView!
+    @IBOutlet weak var button_next: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class ReportViewController: UIViewController, ReportViewProtocol {
     
     func selectPickerType() {
         
-        let alertController = UIAlertController(title: "", message: "Please select picker type.", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "", message: "Please select picker type.", preferredStyle: .alert)
         
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
@@ -101,6 +102,11 @@ extension ReportViewController: SetupViewController {
         collectionViewDamageArea?.register(nib, forCellWithReuseIdentifier: "ReportCollectionViewCell")
         
         self.textViewComments.delegate = self
+        button_next.setBorderColor(.gray)
+        button_next.setBorderWidth(1.0)
+        
+        self.textViewComments.roundCorners(4.0)
+        self.textViewComments.border(width: 1.0, color: .gray)        
     }
     
     func setupNavigation() {
@@ -111,6 +117,7 @@ extension ReportViewController: SetupViewController {
         self.presenter?.getDamagedImages()
     }
 }
+
 extension ReportViewController:UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
         guard let text = textView.text else { return }

@@ -10,12 +10,19 @@ import UIKit
 
 class ReportCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var imageviewDamagedSide: UIImageView!
     @IBOutlet weak var labelDamagedTitle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        viewContainer.roundCorners(4.0)
+        viewContainer.border(width: 1.0, color: .gray)
+        
+        imageviewDamagedSide.roundCorners(4.0)
+        imageviewDamagedSide.border(width: 1.0, color: .gray)
     }
     
     func errorUI() {
