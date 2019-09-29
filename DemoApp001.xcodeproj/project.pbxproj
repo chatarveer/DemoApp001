@@ -13,6 +13,7 @@
 		DA77E4772340728E004E030F /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E4762340728E004E030F /* CGFloat.swift */; };
 		DA77E479234072B0004E030F /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E478234072B0004E030F /* UIDevice.swift */; };
 		DA77E47B2340827D004E030F /* DALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E47A2340827D004E030F /* DALabel.swift */; };
+		DAB3527E2340CB7600889990 /* ReportViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAB3527D2340CB7600889990 /* ReportViewController_iPad.xib */; };
 		DAC08500233FD53D00A89A3E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAC084FF233FD53D00A89A3E /* Media.xcassets */; };
 		DAE54E22233FC3F80022DE78 /* MockReportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE54E21233FC3F80022DE78 /* MockReportInteractor.swift */; };
 		DAE54E24233FC4040022DE78 /* MockReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE54E23233FC4040022DE78 /* MockReportViewController.swift */; };
@@ -65,6 +66,7 @@
 		DA77E4762340728E004E030F /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		DA77E478234072B0004E030F /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		DA77E47A2340827D004E030F /* DALabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DALabel.swift; sourceTree = "<group>"; };
+		DAB3527D2340CB7600889990 /* ReportViewController_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportViewController_iPad.xib; sourceTree = "<group>"; };
 		DAC084FF233FD53D00A89A3E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		DAE54E21233FC3F80022DE78 /* MockReportInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportInteractor.swift; sourceTree = "<group>"; };
 		DAE54E23233FC4040022DE78 /* MockReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				DAF0A1A4233F883E00B1C3A8 /* ReportProtocols.swift */,
 				DAF0A1A5233F883E00B1C3A8 /* ReportInteractor.swift */,
 				DAF0A1A6233F883E00B1C3A8 /* ReportViewController.xib */,
+				DAB3527D2340CB7600889990 /* ReportViewController_iPad.xib */,
 				DAF0A1BC233F8CC900B1C3A8 /* Report+CollectionView.swift */,
 			);
 			path = Report;
@@ -419,6 +422,7 @@
 				DAF0A179233F872F00B1C3A8 /* LaunchScreen.storyboard in Resources */,
 				DAF0A176233F872F00B1C3A8 /* Assets.xcassets in Resources */,
 				DAF0A1AC233F883E00B1C3A8 /* ReportViewController.xib in Resources */,
+				DAB3527E2340CB7600889990 /* ReportViewController_iPad.xib in Resources */,
 				DAF0A1B1233F8ABB00B1C3A8 /* ReportCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
