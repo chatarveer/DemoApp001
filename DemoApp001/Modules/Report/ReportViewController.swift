@@ -37,8 +37,8 @@ class ReportViewController: BaseViewController, ReportViewProtocol {
         ///
     }
     
-    func selectPickerType() {
-        
+    func selectPickerType(shouldShowDelete: Bool, for indexPath: IndexPath) {
+
         let alertController = UIAlertController(title: "", message: "Please select picker type.", preferredStyle: .alert)
         
         
@@ -53,11 +53,18 @@ class ReportViewController: BaseViewController, ReportViewProtocol {
         let galleryAction = UIAlertAction(title: "Gallery", style: .default) { (action:UIAlertAction) in
             self.presenter?.openImagePicker(sourceType: .gallery)
         }
-        
+
         alertController.addAction(cancelAction)
         alertController.addAction(cameraAction)
         alertController.addAction(galleryAction)
         
+        if shouldShowDelete {
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action:UIAlertAction) in
+                self.presenter?.removeImage(indexPath: indexPath)
+            }
+            alertController.addAction(deleteAction)
+        }
+
         self.present(alertController, animated: true, completion: nil)
     }
     
