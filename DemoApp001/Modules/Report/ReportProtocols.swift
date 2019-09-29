@@ -23,6 +23,7 @@ protocol ReportPresenterProtocol: class {
     func set(comment: String)
     
     func selectedIndex(indexPath: IndexPath)
+    func removeImage(indexPath: IndexPath)
     func openImagePicker(sourceType: ImagePickerType)
     func getDamagedImages()
     
@@ -58,7 +59,7 @@ protocol ReportViewProtocol: class {
     func showLoader()
     func hideLoader()
     
-    func selectPickerType()
+    func selectPickerType(shouldShowDelete: Bool, for indexPath: IndexPath)
     func reloadCollection()
     func reloadCollection(indexPath: IndexPath)
 
