@@ -62,8 +62,11 @@
                     <rect key="frame" x="16" y="1288.5" width="992" height="61.5"/>
                     <accessibility key="accessibilityConfiguration" identifier="Next"/>
                     <state key="normal" title="Next">
-                        <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="didPressSubmit:" destination="-1" eventType="touchUpInside" id="MVd-d1-cjy"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
