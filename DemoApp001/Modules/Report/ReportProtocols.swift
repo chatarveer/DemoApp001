@@ -16,14 +16,25 @@ protocol ReportWireframeProtocol: class {
 protocol ReportPresenterProtocol: class {
     
     var interactor: ReportInteractorInputProtocol? { get set }
+    
+    /// Variable to hold images of damaged vehicles sides.
     var arrayDamagedImages: [DamagedImage]? { get set }
+    
+    /// Variable to hold index path user selected.
     var indexPath: IndexPath? { get set }
+    
+    /// Variable to hold comment user has entered.
     var comment: String? { get set }
     
+    /// Call this function to set comment .
+    /// - Parameter comment: Parameter to pass comment from textview to comment variable
     func set(comment: String)
     
     func selectedIndex(indexPath: IndexPath)
     func removeImage(indexPath: IndexPath)
+    
+    /// Call this function when to open Image Picker.
+    /// - Parameter sourceType: This enum decides whether to use gallery or camera
     func openImagePicker(sourceType: ImagePickerType)
     func getDamagedImages()
     
@@ -56,15 +67,22 @@ protocol ReportViewProtocol: class {
     
     /* Presenter -> ViewController */
     
+    /**
+     Call this function to start Loader.
+     */
     func showLoader()
+    
+    /**
+     Call this function to stop Loader.
+     */
     func hideLoader()
     
     func selectPickerType(shouldShowDelete: Bool, for indexPath: IndexPath)
     func reloadCollection()
     func reloadCollection(indexPath: IndexPath)
-
+    
     func updateCommentViewToDefaultState()
-
+    
     func commentInvalid()
     func imageInvalid(indexPath: IndexPath)
 }
