@@ -18,6 +18,8 @@ class ReportPresenter: ReportPresenterProtocol, ReportInteractorOutputProtocol {
     var indexPath: IndexPath?
     var comment: String?
     
+    let placeholder = UIImage(named: "placeholder")
+    
     init(interface: ReportViewProtocol, interactor: ReportInteractorInputProtocol?, router: ReportWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
@@ -26,7 +28,13 @@ class ReportPresenter: ReportPresenterProtocol, ReportInteractorOutputProtocol {
     
     func selectedIndex(indexPath: IndexPath) {
         self.indexPath = indexPath
-        self.view?.selectPickerType()
+        guard let arrayDamagedImages = self.arrayDamagedImages else { return }
+        let image = arrayDamagedImages[indexPath.row]
+        if image.image == placeholder {
+            self.view?.selectPickerType(shouldShowDelete: false, for: indexPath)
+        }else {
+            self.view?.selectPickerType(shouldShowDelete: true, for: indexPath)
+        }
     }
     
     func openImagePicker(sourceType: ImagePickerType) {
@@ -83,7 +91,7 @@ class ReportPresenter: ReportPresenterProtocol, ReportInteractorOutputProtocol {
     }
     
     func validate(image: DamagedImage) -> (image: DamagedImage, isValid: Bool) {
-        guard (image.image) != nil else {
+        guard (image.image) != placeholder else {
             return (image, false)
         }
         return (image, true)
@@ -93,8 +101,13 @@ class ReportPresenter: ReportPresenterProtocol, ReportInteractorOutputProtocol {
         self.comment = comment.trim()
         self.view?.updateCommentViewToDefaultState()
     }
+    
+    func removeImage(indexPath: IndexPath) {
+        self.arrayDamagedImages?[indexPath.row].image = placeholder
+        self.view?.reloadCollection(indexPath: indexPath)
+    }
 }
-	
+
 extension ReportPresenter: ImagePickerDelegate {
     func didSelectImage(image: UIImage) {
         guard let indexPath = self.indexPath else  { return }

@@ -13,10 +13,13 @@ class ReportInteractor: ReportInteractorInputProtocol {
     weak var presenter: ReportInteractorOutputProtocol?
     
     func getDamagedImages() {
-        let damagedImageFront = DamagedImage(image: nil, type: .front)
-        let damagedImageBack = DamagedImage(image: nil, type: .back)
-        let damagedImageLeft = DamagedImage(image: nil, type: .left)
-        let damagedImageRight = DamagedImage(image: nil, type: .right)
+        //Ideally here would be API call which will get object from server of last state.
+        let placeholder = UIImage.init(named: "placeholder")
+        
+        let damagedImageFront = DamagedImage(image: placeholder, type: .front)
+        let damagedImageBack = DamagedImage(image: placeholder, type: .back)
+        let damagedImageLeft = DamagedImage(image: placeholder, type: .left)
+        let damagedImageRight = DamagedImage(image: placeholder, type: .right)
         
         let arrayDamagedImages = [damagedImageFront, damagedImageBack, damagedImageLeft, damagedImageRight]
         self.presenter?.damagedImages(arrayDamagedImages: arrayDamagedImages)

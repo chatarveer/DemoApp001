@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0AAFA92340A2C80071C4FC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0AAFA82340A2C80071C4FC /* BaseViewController.swift */; };
+		DA77E47323406ED5004E030F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E47223406ED5004E030F /* UIView+Extension.swift */; };
+		DA77E47523406F38004E030F /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E47423406F38004E030F /* UIButton+Extension.swift */; };
+		DA77E4772340728E004E030F /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E4762340728E004E030F /* CGFloat.swift */; };
+		DA77E479234072B0004E030F /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E478234072B0004E030F /* UIDevice.swift */; };
+		DA77E47B2340827D004E030F /* DALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E47A2340827D004E030F /* DALabel.swift */; };
 		DAC08500233FD53D00A89A3E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAC084FF233FD53D00A89A3E /* Media.xcassets */; };
 		DAE54E22233FC3F80022DE78 /* MockReportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE54E21233FC3F80022DE78 /* MockReportInteractor.swift */; };
 		DAE54E24233FC4040022DE78 /* MockReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE54E23233FC4040022DE78 /* MockReportViewController.swift */; };
@@ -53,6 +59,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA0AAFA82340A2C80071C4FC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DA77E47223406ED5004E030F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		DA77E47423406F38004E030F /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		DA77E4762340728E004E030F /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		DA77E478234072B0004E030F /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		DA77E47A2340827D004E030F /* DALabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DALabel.swift; sourceTree = "<group>"; };
 		DAC084FF233FD53D00A89A3E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		DAE54E21233FC3F80022DE78 /* MockReportInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportInteractor.swift; sourceTree = "<group>"; };
 		DAE54E23233FC4040022DE78 /* MockReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA0AAFA72340A2B30071C4FC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DA0AAFA82340A2C80071C4FC /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		DA33923C233FBCDE00A4ECFA /* Report */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,11 +189,12 @@
 		DAF0A16B233F872E00B1C3A8 /* DemoApp001 */ = {
 			isa = PBXGroup;
 			children = (
+				DAF0A19C233F878A00B1C3A8 /* AppDelegate */,
+				DAF0A19D233F879D00B1C3A8 /* Bootstrapper */,
+				DA0AAFA72340A2B30071C4FC /* Base */,
 				DAF0A1BE233F9CCE00B1C3A8 /* Models */,
 				DAF0A1B2233F8AC500B1C3A8 /* Helper */,
 				DAF0A1A0233F883300B1C3A8 /* Modules */,
-				DAF0A19D233F879D00B1C3A8 /* Bootstrapper */,
-				DAF0A19C233F878A00B1C3A8 /* AppDelegate */,
 				DAE54E2B233FD3990022DE78 /* Resources */,
 				DAF0A177233F872F00B1C3A8 /* LaunchScreen.storyboard */,
 				DAF0A17A233F872F00B1C3A8 /* Info.plist */,
@@ -250,6 +271,10 @@
 			children = (
 				DAF0A1B7233F8B6700B1C3A8 /* UIViewController+top.swift */,
 				DAF0A1C4233FB25400B1C3A8 /* String+extension.swift */,
+				DA77E47223406ED5004E030F /* UIView+Extension.swift */,
+				DA77E47423406F38004E030F /* UIButton+Extension.swift */,
+				DA77E4762340728E004E030F /* CGFloat.swift */,
+				DA77E478234072B0004E030F /* UIDevice.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -282,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				DAF0A1C2233FA3C600B1C3A8 /* PlaceholderTextView.swift */,
+				DA77E47A2340827D004E030F /* DALabel.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -419,11 +445,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA77E4772340728E004E030F /* CGFloat.swift in Sources */,
+				DA77E479234072B0004E030F /* UIDevice.swift in Sources */,
 				DAF0A1C5233FB25400B1C3A8 /* String+extension.swift in Sources */,
 				DAF0A1B8233F8B6700B1C3A8 /* UIViewController+top.swift in Sources */,
+				DA77E47323406ED5004E030F /* UIView+Extension.swift in Sources */,
+				DA0AAFA92340A2C80071C4FC /* BaseViewController.swift in Sources */,
+				DA77E47523406F38004E030F /* UIButton+Extension.swift in Sources */,
 				DAF0A19F233F87BC00B1C3A8 /* Bootstrapper.swift in Sources */,
 				DAF0A1B6233F8B1E00B1C3A8 /* ImagePickerManager.swift in Sources */,
 				DAF0A16D233F872E00B1C3A8 /* AppDelegate.swift in Sources */,
+				DA77E47B2340827D004E030F /* DALabel.swift in Sources */,
 				DAF0A1BB233F8C5600B1C3A8 /* SetupViews.swift in Sources */,
 				DAF0A1C0233F9D0500B1C3A8 /* DamagedImage.swift in Sources */,
 				DAF0A1BD233F8CC900B1C3A8 /* Report+CollectionView.swift in Sources */,
