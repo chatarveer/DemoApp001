@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0AAFA92340A2C80071C4FC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0AAFA82340A2C80071C4FC /* BaseViewController.swift */; };
 		DA77E47323406ED5004E030F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E47223406ED5004E030F /* UIView+Extension.swift */; };
 		DA77E47523406F38004E030F /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E47423406F38004E030F /* UIButton+Extension.swift */; };
 		DA77E4772340728E004E030F /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E4762340728E004E030F /* CGFloat.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA0AAFA82340A2C80071C4FC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DA77E47223406ED5004E030F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DA77E47423406F38004E030F /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		DA77E4762340728E004E030F /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA0AAFA72340A2B30071C4FC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DA0AAFA82340A2C80071C4FC /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		DA33923C233FBCDE00A4ECFA /* Report */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +191,7 @@
 			children = (
 				DAF0A19C233F878A00B1C3A8 /* AppDelegate */,
 				DAF0A19D233F879D00B1C3A8 /* Bootstrapper */,
+				DA0AAFA72340A2B30071C4FC /* Base */,
 				DAF0A1BE233F9CCE00B1C3A8 /* Models */,
 				DAF0A1B2233F8AC500B1C3A8 /* Helper */,
 				DAF0A1A0233F883300B1C3A8 /* Modules */,
@@ -439,6 +450,7 @@
 				DAF0A1C5233FB25400B1C3A8 /* String+extension.swift in Sources */,
 				DAF0A1B8233F8B6700B1C3A8 /* UIViewController+top.swift in Sources */,
 				DA77E47323406ED5004E030F /* UIView+Extension.swift in Sources */,
+				DA0AAFA92340A2C80071C4FC /* BaseViewController.swift in Sources */,
 				DA77E47523406F38004E030F /* UIButton+Extension.swift in Sources */,
 				DAF0A19F233F87BC00B1C3A8 /* Bootstrapper.swift in Sources */,
 				DAF0A1B6233F8B1E00B1C3A8 /* ImagePickerManager.swift in Sources */,

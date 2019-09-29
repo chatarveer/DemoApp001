@@ -27,7 +27,7 @@ class ReportCollectionViewCell: UICollectionViewCell {
     
     func errorUI() {
         DispatchQueue.main.async { [weak self] in
-            self?.imageviewDamagedSide.backgroundColor = .red
+            self?.imageviewDamagedSide.shake()
         }
     }
 }
@@ -38,9 +38,6 @@ extension ReportCollectionViewCell: SetupCell {
         DispatchQueue.main.async { [weak self] in
             self?.imageviewDamagedSide.image = object.image
             self?.labelDamagedTitle.text = "\(object.type.getTitle()) Side"
-            if object.image != nil {
-                self?.imageviewDamagedSide.backgroundColor = .black
-            }
         }
     }
 }

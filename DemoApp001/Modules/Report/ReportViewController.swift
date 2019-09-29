@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReportViewController: UIViewController, ReportViewProtocol {
+class ReportViewController: BaseViewController, ReportViewProtocol {
     
     var presenter: ReportPresenterProtocol?
     
@@ -75,13 +75,13 @@ class ReportViewController: UIViewController, ReportViewProtocol {
     
     func updateCommentViewToDefaultState() {
         DispatchQueue.main.async {
-            self.textViewComments.backgroundColor = .black
+            self.textViewComments.backgroundColor = .white
         }
     }
     
     func commentInvalid() {
         DispatchQueue.main.async {
-            self.textViewComments.backgroundColor = .red
+            self.textViewComments.shake()
         }
     }
     
@@ -106,11 +106,16 @@ extension ReportViewController: SetupViewController {
         button_next.setBorderWidth(1.0)
         
         self.textViewComments.roundCorners(4.0)
-        self.textViewComments.border(width: 1.0, color: .gray)        
+        self.textViewComments.border(width: 1.0, color: .gray)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ReportViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ReportViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        self.textViewComments.backgroundColor = .white
     }
     
     func setupNavigation() {
-        self.title = "eKar"
+        self.title = "DemoApp001"
     }
     
     func networkRequests() {
@@ -122,5 +127,31 @@ extension ReportViewController:UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
         guard let text = textView.text else { return }
         self.presenter?.set(comment: text)
+    }
+}
+
+extension ReportViewController {
+    @objc func keyboardWillShow(notification:NSNotification) {
+        adjustView(show: true, notification: notification)
+    }
+    
+    @objc func keyboardWillHide(notification:NSNotification) {
+        adjustView(show: false, notification: notification)
+    }
+    
+    func adjustView(show:Bool, notification:NSNotification) {
+        let userInfo = notification.userInfo!
+        let keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let animationDurarion = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
+        let changeInHeight = (keyboardFrame.size.height + 40/*or any value as per need*/) * (show ? 1 : -1)
+        UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
+            // change height Constraint or change height with changeInHeight here to your UItextView/other view
+            if show {
+                self.view.frame.origin.y = -changeInHeight
+            }else {
+                self.view.frame.origin.y = 0
+            }
+        })
+        
     }
 }

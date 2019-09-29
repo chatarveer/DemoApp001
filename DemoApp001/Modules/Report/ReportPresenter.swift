@@ -18,6 +18,8 @@ class ReportPresenter: ReportPresenterProtocol, ReportInteractorOutputProtocol {
     var indexPath: IndexPath?
     var comment: String?
     
+    let placeholder = UIImage(named: "placeholder")
+    
     init(interface: ReportViewProtocol, interactor: ReportInteractorInputProtocol?, router: ReportWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
@@ -83,7 +85,7 @@ class ReportPresenter: ReportPresenterProtocol, ReportInteractorOutputProtocol {
     }
     
     func validate(image: DamagedImage) -> (image: DamagedImage, isValid: Bool) {
-        guard (image.image) != nil else {
+        guard (image.image) != placeholder else {
             return (image, false)
         }
         return (image, true)
