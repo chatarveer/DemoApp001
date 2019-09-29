@@ -25,7 +25,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Wpx-0c-geb" secondAttribute="height" multiplier="1:1" id="R5Y-Kj-Zcc"/>
-                                    <constraint firstAttribute="height" constant="106" id="VI7-Js-j68"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6s-nj-Zpi">
@@ -43,6 +42,7 @@
                             <constraint firstItem="Wpx-0c-geb" firstAttribute="centerX" secondItem="ah8-O3-B7n" secondAttribute="centerX" id="AHa-Pj-3x4"/>
                             <constraint firstItem="Wpx-0c-geb" firstAttribute="top" secondItem="ah8-O3-B7n" secondAttribute="top" constant="8" id="UfM-JR-7jT"/>
                             <constraint firstAttribute="bottom" secondItem="x6s-nj-Zpi" secondAttribute="bottom" constant="8" id="XNA-YB-2Wk"/>
+                            <constraint firstItem="Wpx-0c-geb" firstAttribute="height" secondItem="ah8-O3-B7n" secondAttribute="height" multiplier="0.706667" id="m6s-C9-Wj8"/>
                             <constraint firstAttribute="trailing" secondItem="x6s-nj-Zpi" secondAttribute="trailing" id="yVG-gH-hYi"/>
                         </constraints>
                     </view>

@@ -14,7 +14,9 @@ class ReportRouter: ReportWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ReportViewController(nibName: nil, bundle: nil)
+        
+        let nibName = UIDevice.current.userInterfaceIdiom == .pad ? "ReportViewController_iPad" : "ReportViewController"
+        let view = ReportViewController(nibName: nibName, bundle: nil)
         let interactor = ReportInteractor()
         let router = ReportRouter()
         let presenter = ReportPresenter(interface: view, interactor: interactor, router: router)
