@@ -15,7 +15,7 @@ class PlaceholderTextView: UITextView {
     @IBInspectable var placeholderText: String = ""
     
     @IBInspectable var doneAccessory: Bool{
-        get{
+        get {
             return self.doneAccessory
         }
         set (hasDone) {

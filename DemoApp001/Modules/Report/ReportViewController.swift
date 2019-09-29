@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// ReportViewController to manage and upload images of damaged vehicle sides & comments.
 class ReportViewController: BaseViewController, ReportViewProtocol {
     
     var presenter: ReportPresenterProtocol?
@@ -29,16 +30,18 @@ class ReportViewController: BaseViewController, ReportViewProtocol {
         self.presenter?.submit()
     }
     
+    ///Call this function to start Loader
     func showLoader() {
         ///
     }
     
+    ///Call this function to stop Loader.
     func hideLoader() {
         ///
     }
     
     func selectPickerType(shouldShowDelete: Bool, for indexPath: IndexPath) {
-
+        
         let alertController = UIAlertController(title: "", message: "Please select picker type.", preferredStyle: .alert)
         
         
@@ -53,7 +56,7 @@ class ReportViewController: BaseViewController, ReportViewProtocol {
         let galleryAction = UIAlertAction(title: "Gallery", style: .default) { (action:UIAlertAction) in
             self.presenter?.openImagePicker(sourceType: .gallery)
         }
-
+        
         alertController.addAction(cancelAction)
         alertController.addAction(cameraAction)
         alertController.addAction(galleryAction)
@@ -64,7 +67,7 @@ class ReportViewController: BaseViewController, ReportViewProtocol {
             }
             alertController.addAction(deleteAction)
         }
-
+        
         self.present(alertController, animated: true, completion: nil)
     }
     
