@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Photos
 
 enum ImagePickerType: Int {
     case camera = 0
@@ -61,11 +62,8 @@ class ImagePickerManager: NSObject, IImagePickerManager {
             }
             
             self.delegate = delegate
-            if let pickerController = self.pickerController {
-                DispatchQueue.main.async {
-                    UIViewController.top().present(pickerController, animated: true, completion: nil)
-                }
-            }
+            
+            self.authorisationStatus(type: sourceType)
         } else {
             let alertController = UIAlertController(title: "", message: "Your device doesn't support this type of selection.", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Okay", style: .cancel) { (action:UIAlertAction) in
@@ -91,7 +89,7 @@ extension ImagePickerManager: UIImagePickerControllerDelegate {
             self.didSelectImage(image: image)
         }
     }
-
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
@@ -99,4 +97,99 @@ extension ImagePickerManager: UIImagePickerControllerDelegate {
 
 extension ImagePickerManager: UINavigationControllerDelegate {
     
+}
+
+extension ImagePickerManager {
+    func authorisationStatus(type: ImagePickerType) {
+        
+        if type == .camera {
+            //Camera
+            AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
+                if response {
+                    //access granted
+                    if let pickerController = self.pickerController {
+                        DispatchQueue.main.async {
+                            UIViewController.top().present(pickerController, animated: true, completion: nil)
+                        }
+                    }
+                } else {
+                    
+                    self.showCameraError()
+                    
+                }
+            }
+        }else if type == .gallery {
+            //Photos
+            let photos = PHPhotoLibrary.authorizationStatus()
+            
+            switch photos {
+            case .notDetermined:
+                PHPhotoLibrary.requestAuthorization({status in
+                    if status == .authorized {
+                        if let pickerController = self.pickerController {
+                            DispatchQueue.main.async {
+                                UIViewController.top().present(pickerController, animated: true, completion: nil)
+                            }
+                        }
+                    } else {
+                        self.showGalleryError()
+                    }
+                })
+            case .restricted:
+                self.showGalleryError()
+            case .denied:
+                self.showGalleryError()
+            case .authorized:
+                if let pickerController = self.pickerController {
+                    DispatchQueue.main.async {
+                        UIViewController.top().present(pickerController, animated: true, completion: nil)
+                    }
+                }
+            @unknown default:
+                break
+            }
+            
+        }
+    }
+    
+    private func showCameraError() {
+        let alertController = UIAlertController(title: "", message: "Camera permission is not granted", preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (action:UIAlertAction) in
+            //Settings Action is selected
+            if let url = NSURL(string: UIApplication.openSettingsURLString) as URL? {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        
+        alertController.addAction(settingsAction)
+        
+        let okAction = UIAlertAction(title: "Okay", style: .cancel) { (action:UIAlertAction) in
+            //Cancel Action is selected
+        }
+        alertController.addAction(okAction)
+        DispatchQueue.main.async {
+            UIViewController.top().present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    private func showGalleryError() {
+        let alertController = UIAlertController(title: "", message: "Gallery permission is not granted.", preferredStyle: .alert)
+        
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (action:UIAlertAction) in
+            //Setting Action is selected
+            if let url = NSURL(string: UIApplication.openSettingsURLString) as URL? {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        
+        alertController.addAction(settingsAction)
+        
+        let okAction = UIAlertAction(title: "Okay", style: .cancel) { (action:UIAlertAction) in
+            //Cancel Action is selected
+        }
+        alertController.addAction(okAction)
+        DispatchQueue.main.async {
+            UIViewController.top().present(alertController, animated: true, completion: nil)
+        }
+    }
 }

@@ -35,6 +35,7 @@ class ReportViewController: BaseViewController, ReportViewProtocol {
     ///Call this function to start Loader
     func showLoader() {
         DispatchQueue.main.async { [weak self] in
+            UIApplication.shared.beginIgnoringInteractionEvents()
             self?.activityIndicator.startAnimating()
         }
     }
@@ -42,6 +43,7 @@ class ReportViewController: BaseViewController, ReportViewProtocol {
     ///Call this function to stop Loader.
     func hideLoader() {
         DispatchQueue.main.async { [weak self] in
+            UIApplication.shared.endIgnoringInteractionEvents()
             self?.activityIndicator.stopAnimating()
         }
     }
