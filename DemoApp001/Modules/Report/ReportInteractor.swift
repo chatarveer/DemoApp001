@@ -38,6 +38,7 @@ class ReportInteractor: ReportInteractorInputProtocol {
                 ImageUploader.shared.uploadImage(imageData, urlToUpladImg: "https://api.cloudinary.com/v1_1/dk6hqmxjl/image/upload") { response in
                     
                     response.successResponse.flatMap { (data, response) in
+                        print("Response Image URL \(response)")
                         successCount = successCount + 1
                         if successCount == damagedComplain.damagedImages.count {
                             self.presenter?.reportSubmittedSuccessfully()

@@ -71,7 +71,7 @@
                 </button>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="boR-jc-XnF">
                     <rect key="frame" x="493.5" y="664.5" width="37" height="37"/>
-                    <color key="color" red="0.32549019610000002" green="0.7843137255" blue="0.97254901959999995" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
