@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DA0AAFA92340A2C80071C4FC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0AAFA82340A2C80071C4FC /* BaseViewController.swift */; };
+		DA2B65AF2341FD980074A901 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B65AE2341FD980074A901 /* UIImage+extension.swift */; };
+		DA2B65B32341FDDD0074A901 /* NSMutableData+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B65B22341FDDD0074A901 /* NSMutableData+extension.swift */; };
+		DA2B65B52341FDF70074A901 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B65B42341FDF70074A901 /* Result.swift */; };
 		DA77E47323406ED5004E030F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E47223406ED5004E030F /* UIView+Extension.swift */; };
 		DA77E47523406F38004E030F /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E47423406F38004E030F /* UIButton+Extension.swift */; };
 		DA77E4772340728E004E030F /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E4762340728E004E030F /* CGFloat.swift */; };
@@ -15,6 +18,7 @@
 		DA77E47B2340827D004E030F /* DALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77E47A2340827D004E030F /* DALabel.swift */; };
 		DAB3527E2340CB7600889990 /* ReportViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAB3527D2340CB7600889990 /* ReportViewController_iPad.xib */; };
 		DAC08500233FD53D00A89A3E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAC084FF233FD53D00A89A3E /* Media.xcassets */; };
+		DACB88502341172F00082F66 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB884F2341172F00082F66 /* ImageUploader.swift */; };
 		DAE54E22233FC3F80022DE78 /* MockReportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE54E21233FC3F80022DE78 /* MockReportInteractor.swift */; };
 		DAE54E24233FC4040022DE78 /* MockReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE54E23233FC4040022DE78 /* MockReportViewController.swift */; };
 		DAE54E26233FC40D0022DE78 /* MockReportRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE54E25233FC40D0022DE78 /* MockReportRouter.swift */; };
@@ -61,6 +65,9 @@
 
 /* Begin PBXFileReference section */
 		DA0AAFA82340A2C80071C4FC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DA2B65AE2341FD980074A901 /* UIImage+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
+		DA2B65B22341FDDD0074A901 /* NSMutableData+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableData+extension.swift"; sourceTree = "<group>"; };
+		DA2B65B42341FDF70074A901 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		DA77E47223406ED5004E030F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DA77E47423406F38004E030F /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		DA77E4762340728E004E030F /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 		DA77E47A2340827D004E030F /* DALabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DALabel.swift; sourceTree = "<group>"; };
 		DAB3527D2340CB7600889990 /* ReportViewController_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportViewController_iPad.xib; sourceTree = "<group>"; };
 		DAC084FF233FD53D00A89A3E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		DACB884F2341172F00082F66 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		DAE54E21233FC3F80022DE78 /* MockReportInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportInteractor.swift; sourceTree = "<group>"; };
 		DAE54E23233FC4040022DE78 /* MockReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportViewController.swift; sourceTree = "<group>"; };
 		DAE54E25233FC40D0022DE78 /* MockReportRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportRouter.swift; sourceTree = "<group>"; };
@@ -148,6 +156,14 @@
 				DAF0A1BC233F8CC900B1C3A8 /* Report+CollectionView.swift */,
 			);
 			path = Report;
+			sourceTree = "<group>";
+		};
+		DACB884C234116B900082F66 /* ImageUploader */ = {
+			isa = PBXGroup;
+			children = (
+				DACB884F2341172F00082F66 /* ImageUploader.swift */,
+			);
+			path = ImageUploader;
 			sourceTree = "<group>";
 		};
 		DAE54E20233FC3C50022DE78 /* ReportTests */ = {
@@ -261,6 +277,7 @@
 		DAF0A1B2233F8AC500B1C3A8 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				DACB884C234116B900082F66 /* ImageUploader */,
 				DAF0A1C1233FA3BC00B1C3A8 /* CustomViews */,
 				DAF0A1B9233F8C4800B1C3A8 /* Protocols */,
 				DAF0A1B4233F8AD400B1C3A8 /* ImagePicker */,
@@ -278,6 +295,8 @@
 				DA77E47423406F38004E030F /* UIButton+Extension.swift */,
 				DA77E4762340728E004E030F /* CGFloat.swift */,
 				DA77E478234072B0004E030F /* UIDevice.swift */,
+				DA2B65AE2341FD980074A901 /* UIImage+extension.swift */,
+				DA2B65B22341FDDD0074A901 /* NSMutableData+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -302,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				DAF0A1BF233F9D0500B1C3A8 /* DamagedImage.swift */,
+				DA2B65B42341FDF70074A901 /* Result.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -452,7 +472,10 @@
 				DA77E4772340728E004E030F /* CGFloat.swift in Sources */,
 				DA77E479234072B0004E030F /* UIDevice.swift in Sources */,
 				DAF0A1C5233FB25400B1C3A8 /* String+extension.swift in Sources */,
+				DACB88502341172F00082F66 /* ImageUploader.swift in Sources */,
 				DAF0A1B8233F8B6700B1C3A8 /* UIViewController+top.swift in Sources */,
+				DA2B65B32341FDDD0074A901 /* NSMutableData+extension.swift in Sources */,
+				DA2B65B52341FDF70074A901 /* Result.swift in Sources */,
 				DA77E47323406ED5004E030F /* UIView+Extension.swift in Sources */,
 				DA0AAFA92340A2C80071C4FC /* BaseViewController.swift in Sources */,
 				DA77E47523406F38004E030F /* UIButton+Extension.swift in Sources */,
@@ -470,6 +493,7 @@
 				DAF0A1AA233F883E00B1C3A8 /* ReportProtocols.swift in Sources */,
 				DAF0A1A8233F883E00B1C3A8 /* ReportRouter.swift in Sources */,
 				DAF0A1A9233F883E00B1C3A8 /* ReportViewController.swift in Sources */,
+				DA2B65AF2341FD980074A901 /* UIImage+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

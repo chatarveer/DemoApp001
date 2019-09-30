@@ -24,24 +24,21 @@ public extension CGFloat {
         
         switch type {
         case .iPhone4:
-            print("iPhone 4 size")
             self = (self * 0.7729468599)
         case .iPhone5:
-            print("iPhone 5 size")
             self = (self * 0.5152979066)
         case .iPhone8:
-            print("iPhone 8 size")
             self = (self * 0.6038647343)
         case .iPhone8Plus:
             //NO Change in size as base size is iPhone 8 Plus
-            print("iPhone 8 Plus size")
+            break
         case .iPhoneX:
-            print("iPhone X size")
             self = (self * 0.9057971014)
         case .iPhoneXSMax:
-            print("iPhone Xs Max size")
+            self = (self * 1.2173913043)
         case .iPad:
-            print("iPad size")
+            //NO Change in size as base size is iPad
+            break
         case .TV:
             print("TV size")
         case .carPlay:
@@ -59,7 +56,7 @@ public extension CGFloat {
                 // Unknown type
                 return
         }
-
+        
         switch type {
         case .iPhone4:
             print("iPhone 4 size")
@@ -80,7 +77,7 @@ public extension CGFloat {
             print("iPhone Xs Max size")
             self = (self * 1.2173913043)
         case .iPad:
-            print("iPad size")
+            break
         case .TV:
             print("TV size")
         case .carPlay:
