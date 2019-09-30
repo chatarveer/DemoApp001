@@ -17,6 +17,8 @@ class ReportViewController: BaseViewController, ReportViewProtocol {
     @IBOutlet weak var textViewComments: PlaceholderTextView!
     @IBOutlet weak var button_next: UIButton!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,17 +34,21 @@ class ReportViewController: BaseViewController, ReportViewProtocol {
     
     ///Call this function to start Loader
     func showLoader() {
-        ///
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicator.startAnimating()
+        }
     }
     
     ///Call this function to stop Loader.
     func hideLoader() {
-        ///
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicator.stopAnimating()
+        }
     }
     
     func selectPickerType(shouldShowDelete: Bool, for indexPath: IndexPath) {
         
-        let alertController = UIAlertController(title: "", message: "Please select picker type.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "", message: "Please select image source.", preferredStyle: .alert)
         
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
@@ -100,6 +106,35 @@ class ReportViewController: BaseViewController, ReportViewProtocol {
             cell.errorUI()
         }
     }
+    
+    func reportSubmittedSuccessfully() {
+        
+        let alertController = UIAlertController(title: "", message: "Report is successfully submitted.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel) { (action:UIAlertAction) in
+            //ok Action is selected
+            self.presenter?.getDamagedImages()
+            self.textViewComments.text = ""
+        }
+        alertController.addAction(okAction)
+        
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func reportSubmissionFailed(error: Error) {
+        let alertController = UIAlertController(title: "", message: "There is an error in submitting your report. Please try again later", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel) { (action:UIAlertAction) in
+            //Cancel Action is selected
+        }
+        alertController.addAction(okAction)
+        
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    
 }
 
 extension ReportViewController: SetupViewController {
