@@ -66,31 +66,24 @@ extension DALabel {
                 
         switch type {
         case .iPhone4:
-            print("iPhone 4 size")
             size = 0.652173913
         case .iPhone5:
-            print("iPhone 5 size")
             size = 0.7717391304
         case .iPhone8:
-            print("iPhone 8 size")
             size = 0.90625
         case .iPhone8Plus:
             //NO Change in size as base size is iPhone 8 Plus
-            print("iPhone 8 Plus size")
             size = 1.0
         case .iPhoneX:
-            print("iPhone X size")
             size = 1.1032608696
         case .iPhoneXSMax:
-            print("iPhone Xs Max size")
             size = 1.2173913043
         case .iPad:
-            print("iPad size")
             size = 1.0
         case .TV:
-            print("TV size")
+            size = 1.0
         case .carPlay:
-            print("Carplay size")
+            size = 1.0
         case .unspecified:
             print("Unknown device size")
         }

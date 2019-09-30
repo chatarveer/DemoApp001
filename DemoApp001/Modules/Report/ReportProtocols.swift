@@ -49,6 +49,10 @@ protocol ReportInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     
     func damagedImages(arrayDamagedImages: [DamagedImage])
+    
+    func reportSubmittedSuccessfully()
+    func reportSubmissionFailed(error: Error)
+    
 }
 
 protocol ReportInteractorInputProtocol: class {
@@ -85,4 +89,7 @@ protocol ReportViewProtocol: class {
     
     func commentInvalid()
     func imageInvalid(indexPath: IndexPath)
+    
+    func reportSubmittedSuccessfully()
+    func reportSubmissionFailed(error: Error)
 }

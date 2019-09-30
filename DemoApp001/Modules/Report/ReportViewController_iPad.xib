@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReportViewController" customModule="DemoApp001" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="boR-jc-XnF" id="uAh-Zl-kw6"/>
                 <outlet property="button_next" destination="u5V-gu-nL4" id="xqZ-Fr-me5"/>
                 <outlet property="collectionViewDamageArea" destination="l1b-xu-PoB" id="AQp-qE-Gqm"/>
                 <outlet property="textViewComments" destination="ZWM-Tz-6Br" id="jAB-4w-C7S"/>
@@ -68,10 +69,15 @@
                         <action selector="didPressSubmit:" destination="-1" eventType="touchUpInside" id="MVd-d1-cjy"/>
                     </connections>
                 </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="boR-jc-XnF">
+                    <rect key="frame" x="493.5" y="664.5" width="37" height="37"/>
+                    <color key="color" red="0.32549019610000002" green="0.7843137255" blue="0.97254901959999995" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="SVn-dm-Khm" firstAttribute="top" secondItem="P9q-ot-F96" secondAttribute="top" constant="20" id="3Ak-0g-Cjc"/>
+                <constraint firstItem="boR-jc-XnF" firstAttribute="centerX" secondItem="Dpk-z9-iTz" secondAttribute="centerX" id="8Jf-fB-m7w"/>
                 <constraint firstItem="0PA-FF-q4z" firstAttribute="top" secondItem="l1b-xu-PoB" secondAttribute="bottom" constant="8" id="Cpv-JI-E8q"/>
                 <constraint firstItem="u5V-gu-nL4" firstAttribute="height" secondItem="Dpk-z9-iTz" secondAttribute="height" multiplier="0.045" id="DVC-qO-Wkb"/>
                 <constraint firstAttribute="trailing" secondItem="u5V-gu-nL4" secondAttribute="trailing" constant="16" id="JZb-eU-Vkm"/>
@@ -84,6 +90,7 @@
                 <constraint firstItem="ZWM-Tz-6Br" firstAttribute="top" secondItem="0PA-FF-q4z" secondAttribute="bottom" constant="8" id="jha-Ae-h7t"/>
                 <constraint firstAttribute="trailing" secondItem="SVn-dm-Khm" secondAttribute="trailing" constant="16" id="khW-AQ-O4p"/>
                 <constraint firstAttribute="trailing" secondItem="0PA-FF-q4z" secondAttribute="trailing" constant="16" id="o4l-dL-1IB"/>
+                <constraint firstItem="boR-jc-XnF" firstAttribute="centerY" secondItem="Dpk-z9-iTz" secondAttribute="centerY" id="rAi-pl-Gba"/>
                 <constraint firstItem="ZWM-Tz-6Br" firstAttribute="leading" secondItem="Dpk-z9-iTz" secondAttribute="leading" constant="16" id="rVW-gP-yea"/>
                 <constraint firstAttribute="trailing" secondItem="ZWM-Tz-6Br" secondAttribute="trailing" constant="16" id="vt8-D5-G4R"/>
                 <constraint firstItem="SVn-dm-Khm" firstAttribute="leading" secondItem="Dpk-z9-iTz" secondAttribute="leading" constant="16" id="xep-ig-9oi"/>

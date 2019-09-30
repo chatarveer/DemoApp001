@@ -77,10 +77,12 @@ class ReportPresenter: ReportPresenterProtocol, ReportInteractorOutputProtocol {
                     return
             }
             
+            //Start Loader
+            self.view?.showLoader()
+            
+            //Make Complain & Submit to server
             let complain = DamagedComplainRequest(comment: comment, damagedImages: arrayDamagedImages)
             self.interactor?.submit(damagedComplain: complain)
-            
-            //.submit(damagedImages: complain)
         }
     }
     
@@ -105,6 +107,22 @@ class ReportPresenter: ReportPresenterProtocol, ReportInteractorOutputProtocol {
     func removeImage(indexPath: IndexPath) {
         self.arrayDamagedImages?[indexPath.row].image = placeholder
         self.view?.reloadCollection(indexPath: indexPath)
+    }
+    
+    func reportSubmittedSuccessfully() {
+        //Stop Loader
+        self.view?.hideLoader()
+        
+        //Update View after success
+        self.view?.reportSubmittedSuccessfully()
+    }
+    
+    func reportSubmissionFailed(error: Error) {
+        //Stop Loader
+        self.view?.hideLoader()
+        
+        //show error on failure if any image upload fails
+        self.view?.reportSubmissionFailed(error: error)
     }
 }
 
